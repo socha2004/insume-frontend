@@ -9,8 +9,9 @@ interface Usuario {
 interface AuthContextData {
   usuario: Usuario | null;
   isAuthenticated: boolean;
-  loading: boolean; // importante pra saber se ainda tá checando o auth inicial
+  loading: boolean;
   login: (email: string, password: string) => Promise<void>;
+  register: (nome: string, email: string, password: string) => Promise<void>;
   logout: () => void;
 }
 
@@ -37,7 +38,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }, []);
 
   async function login(email: string, password: string) {
-    const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}/session`, {
+    const response = await fetch(import.meta.env.VITE_BACKEND_URL + "/api/Auth/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ email, password }),
@@ -47,7 +48,34 @@ export function AuthProvider({ children }: { children: ReactNode }) {
       throw new Error("Credenciais inválidas");
     }
 
-    const { token, user: loggedUser } = await response.json();
+    const data = await response.json();
+    // data = { id, nome, email, token }
+
+    const { token, ...loggedUser } = data;
+    // token = "eyJhbGci..."
+    // loggedUser = { id: 1, nome: "Eugenio Socha", email: "eugenio@email.com" }
+
+    localStorage.setItem("@Insume:token", token);
+    localStorage.setItem("@Insume:user", JSON.stringify(loggedUser));
+
+    setUsuario(loggedUser);
+  }
+
+  async function register(nome: string, email: string, password: string) {
+    const response = await fetch(import.meta.env.VITE_BACKEND_URL + "/api/Auth/register", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ nome, email, password }),
+    });
+
+    if (!response.ok) {
+      // tenta ler a mensagem de erro que a API mandar (ex: "email já cadastrado")
+      const errorData = await response.json().catch(() => null);
+      throw new Error(errorData?.message || "Não foi possível criar a conta");
+    }
+
+    const data = await response.json();
+    const { token, ...loggedUser } = data;
 
     localStorage.setItem("@Insume:token", token);
     localStorage.setItem("@Insume:user", JSON.stringify(loggedUser));
@@ -63,7 +91,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
 
   return (
     <AuthContext.Provider
-      value={{ usuario, isAuthenticated: !!usuario, loading, login, logout }}
+      value={{ usuario, isAuthenticated: !!usuario, loading, login, register, logout }}
     >
       {children}
     </AuthContext.Provider>
