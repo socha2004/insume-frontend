@@ -37,11 +37,11 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     loadStoredAuth();
   }, []);
 
-  async function login(email: string, password: string) {
-    const response = await fetch(import.meta.env.VITE_BACKEND_URL + "/api/Auth/login", {
+  async function login(email: string, senha: string) {
+    const response = await fetch(import.meta.env.VITE_AUTH_ENDPOINT + "/login", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ email, password }),
+      body: JSON.stringify({ email, senha }),
     });
 
     if (!response.ok) {
@@ -52,7 +52,6 @@ export function AuthProvider({ children }: { children: ReactNode }) {
     // data = { id, nome, email, token }
 
     const { token, ...loggedUser } = data;
-    // token = "eyJhbGci..."
     // loggedUser = { id: 1, nome: "Eugenio Socha", email: "eugenio@email.com" }
 
     localStorage.setItem("@Insume:token", token);
@@ -62,7 +61,7 @@ export function AuthProvider({ children }: { children: ReactNode }) {
   }
 
   async function register(nome: string, email: string, password: string) {
-    const response = await fetch(import.meta.env.VITE_BACKEND_URL + "/api/Auth/register", {
+    const response = await fetch(import.meta.env.VITE_AUTH_ENDPOINT + "/register", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ nome, email, password }),
