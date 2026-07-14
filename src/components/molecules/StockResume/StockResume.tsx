@@ -1,4 +1,4 @@
-import { StockCard  } from './StockCard'
+import { StockCard  } from './components/StockCard'
 export const StockResume = () => {
     return (
         <div className="p-4">
