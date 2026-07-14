@@ -1,7 +1,11 @@
-import { Home } from './organisms/home/Home'
+import { Home } from './pages/Home'
 import { Navbar } from './molecules/Navbar/Navbar'
+import { LoginPage } from './pages/LoginPage'
+import { RegisterPage } from './pages/RegisterPage'
 
 export { 
     Home,
-    Navbar
+    Navbar,
+    LoginPage,
+    RegisterPage
  }

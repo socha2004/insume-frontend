@@ -1,10 +1,10 @@
-import { Home, Navbar } from './components'
+import { LoginPage, Navbar } from './components'
 
 function App() {
   return (
     <>
       <Navbar />
-      <Home />
+      <LoginPage />
     </>
   )
 }
