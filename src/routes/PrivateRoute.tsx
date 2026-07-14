@@ -1,5 +1,6 @@
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
+import { Navbar } from "../components";
 
 export function PrivateRoute() {
   const { isAuthenticated, loading } = useAuth();
@@ -14,5 +15,10 @@ export function PrivateRoute() {
     return <Navigate to="/login" state={{ from: location }} replace />;
   }
 
-  return <Outlet />;
+  return (
+    <>
+      <Navbar/>
+      <Outlet />
+    </>
+  ) ;
 }
