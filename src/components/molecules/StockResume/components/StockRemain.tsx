@@ -1,12 +1,27 @@
+import { useDashboard } from '../../../../hooks/useDashboard';
 interface StockRemainProps {
-    insumo: string;
+    data: object[] | null;
+    loading: boolean;
+    error: string | null;
+    refetch: () => void;
 }
 
 export const StockRemain = (props: StockRemainProps) => {
+    const { data, loading, error, refetch } = useDashboard();
+
+    if (props.data === null && props.loading) return <p>Carregando dashboard...</p>;
+    if (props.error) return <p>Erro: {props.error}</p>;
+
     return (
-        <div className="p-4">
+        <div className="mt-4">
             <h2 className='text-3xl font-semibold text-gray-700'>Itens com estoque baixo</h2>
-            <p className='text-gray-500'>Insumo: {props.insumo}</p>
+            <ul>
+                {props.data?.map((insumo) => (
+                    <li key={insumo.id}>
+                        {insumo.quantidade < insumo.estoqueMinimo && <p>{insumo.nome} - Quantidade: {insumo.quantidade}</p>}
+                    </li>
+                ))}
+            </ul>
         </div>
     )
 }
