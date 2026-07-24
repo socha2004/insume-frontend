@@ -1,5 +1,9 @@
+// Componentes
 import { StockCard } from './components/StockCard'
 import { StockRemain } from './components/StockRemain'
+import { StockByCategory } from './components/StockByCategory';
+
+// Hooks, utils
 import { useDashboard } from '../../../hooks/useDashboard';
 
 export const StockResume = () => {
@@ -17,6 +21,7 @@ export const StockResume = () => {
             </div>
            
             <StockRemain data={data} loading={loading} error={error} refetch={refetch}/>
+            <StockByCategory data={data} loading={loading} error={error} refetch={refetch}/>
             
         </div>
     )
