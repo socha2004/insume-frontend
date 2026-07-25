@@ -1,4 +1,5 @@
 import React from 'react'
+import { StockResume } from '../../components'
 
 export const Home = () => {
     return (
@@ -8,7 +9,7 @@ export const Home = () => {
             </div>
         
             <main className="mt-4 p-4 rounded-lg shadow-md">
-                <h2 className='text-3xl font-semibold text-gray-700'>Resumo de estoque</h2>
+                <StockResume />
             </main>
         </div>
     )

@@ -2,8 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 import { PrivateRoute } from "./PrivateRoute";
 
-import { Home } from "../components"
-import { LoginPage } from "../components"
+import { Home, Stock, LoginPage } from "../components"
 import { RegisterPage } from "../components/pages/RegisterPage";
 
 export const routesApp = () => {
@@ -15,6 +14,8 @@ export const routesApp = () => {
             <Route element={<PrivateRoute />}>
                 <Route path="/" element={<Home />} />
                 <Route path="*" element={<Navigate to="/" />} />
+
+                <Route path="/stock" element={<Stock />} />
             </Route>
         </Routes>
     )
