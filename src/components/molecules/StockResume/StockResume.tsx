@@ -14,10 +14,7 @@ export const StockResume = () => {
             <h2 className='text-3xl font-semibold text-gray-700'>Resumo de estoque</h2>
             <p className='text-gray-600'>Aqui você pode visualizar um resumo do seu estoque.</p>
             <div className='flex flex-wrap gap-4 mt-4 justify-between'>
-                <StockCard icon="📦" label="Total de insumos cadastrados:" value="10" color="#4CAF50" textColor='white' />
-                <StockCard icon="📦" label="Total de insumos cadastrados:" value="10" color="bg-green-500" />
-                <StockCard icon="📦" label="Total de insumos cadastrados:" value="10" color="bg-yellow-500" />
-                <StockCard icon="📦" label="Total de insumos cadastrados:" value="10" color="bg-red-500" />
+                <StockCard icon="📦" label="Total de insumos cadastrados:" data={data} color="#4CAF50" textColor='white' />
             </div>
            
             <StockRemain data={data} loading={loading} error={error} refetch={refetch}/>
