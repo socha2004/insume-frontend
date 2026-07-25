@@ -14,11 +14,11 @@ interface StockCardProps {
 export const StockCard = (props: StockCardProps) => {
 
     return (
-        <div className="flex justify-around gap-4 flex-wrap">
+        <div className="grid grid-cols-1 sm:grid-cols-4 gap-4 mt-4">
 
              {/* CARD DE TOTAL DE INSUMOS CADASTRADOS */}
             <div
-                className={`p-4 flex items-center gap-4 shadow-md max-w-fit mt-3 rounded-md`}
+                className={`p-4 flex items-center gap-4 shadow-md mt-3 rounded-md`}
                 style={{ backgroundColor: props.color || 'white' }}
             >
                 <div>
@@ -36,7 +36,7 @@ export const StockCard = (props: StockCardProps) => {
             </div>
 
             {/* CARD DE INSUMOS EM FALTA */}
-            <div className={`p-4 flex items-center gap-4 shadow-md max-w-fit mt-3 rounded-md bg-red-700`}>
+            <div className={`p-4 flex items-center gap-4 shadow-md mt-3 rounded-md bg-red-700`}>
                 <div>
                     <img src={warningIcon} width={40} height={40}/>
                 </div>
@@ -48,7 +48,7 @@ export const StockCard = (props: StockCardProps) => {
             </div>
 
             {/* CARD DE INSUMOS ACABANDO */}
-            <div className={`p-4 flex items-center gap-4 shadow-md max-w-fit mt-3 rounded-md bg-orange-600`}>
+            <div className={`p-4 flex items-center gap-4 shadow-md  mt-3 rounded-md bg-orange-600`}>
                 <div>
                     <img src={alarmIcon} width={40} height={40}/>
                 </div>
@@ -60,7 +60,7 @@ export const StockCard = (props: StockCardProps) => {
             </div>
 
             {/* CARD DE TOTAL DE CATEGORIAS */}
-            <div className={`p-4 flex items-center gap-4 shadow-md max-w-fit mt-3 rounded-md bg-blue-600`}>
+            <div className={`p-4 flex items-center gap-4 shadow-md mt-3 rounded-md bg-blue-600`}>
                 <div>
                     <img src={categoryIcon} width={40} height={40}/>
                 </div>
