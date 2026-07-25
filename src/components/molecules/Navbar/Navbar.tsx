@@ -1,5 +1,6 @@
 import NavbarIcon from '/public/navbar-icon.svg'
 import { useAuth } from '../../../context/AuthContext'
+import { Link } from "react-router-dom"
 
 export const Navbar = () => {
     const { usuario, logout } = useAuth();
@@ -15,15 +16,15 @@ export const Navbar = () => {
                 <span>
                     {usuario ? `Bem-vindo! ${usuario.nome} |` : 'Não autenticado'}
                 </span>
-                <a href="#" className="hover:underline">
+                <Link to="/" className="hover:underline">
                     Home
-                </a>
-                <a href="#" className="hover:underline">
+                </Link>
+                <Link to="/stock" className="hover:underline">
                     Estoque
-                </a>
-                <a href="#" className="hover:underline">
+                </Link>
+                <Link to="/about" className="hover:underline">
                     Sobre
-                </a>
+                </Link>
                 <button onClick={logout} className="hover:underline">
                     Sair
                 </button>
