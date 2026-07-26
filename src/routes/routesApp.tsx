@@ -16,6 +16,7 @@ export const routesApp = () => {
                 <Route path="*" element={<Navigate to="/" />} />
 
                 <Route path="/stock" element={<Stock />} />
+                <Route path="/new-insume" element={} />
             </Route>
         </Routes>
     )
