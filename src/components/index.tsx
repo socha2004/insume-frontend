@@ -5,6 +5,8 @@ import { RegisterPage } from './pages/RegisterPage'
 import { StockResume } from './molecules/StockResume/StockResume'
 import { Stock } from './pages/Stock'
 import { StockTable } from './molecules/StockPage/StockTable'
+import { NewInsume } from './pages/NewInsume'
+import { NewInsumeForm } from './molecules/NewInsumeForm/NewInsumeForm'
 
 export { 
     Home,
@@ -13,5 +15,7 @@ export {
     RegisterPage,
     StockResume,
     Stock,
-    StockTable
+    StockTable,
+    NewInsume,
+    NewInsumeForm
  }

@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 import { PrivateRoute } from "./PrivateRoute";
 
-import { Home, Stock, LoginPage } from "../components"
+import { Home, Stock, LoginPage, NewInsume } from "../components"
 import { RegisterPage } from "../components/pages/RegisterPage";
 
 export const routesApp = () => {
@@ -16,7 +16,7 @@ export const routesApp = () => {
                 <Route path="*" element={<Navigate to="/" />} />
 
                 <Route path="/stock" element={<Stock />} />
-                <Route path="/new-insume" element={} />
+                <Route path="/new-insume" element={<NewInsume />} />
             </Route>
         </Routes>
     )
