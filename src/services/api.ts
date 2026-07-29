@@ -19,6 +19,11 @@ async function api(endpoint: string, options: ApiOptions = {}) {
 
   const response = await fetch(`${import.meta.env.VITE_BACKEND_URL}${endpoint}`, {
     ...restOptions,
+    body:
+      restOptions.body &&
+        typeof restOptions.body !== "string"
+        ? JSON.stringify(restOptions.body)
+        : restOptions.body,
     headers: finalHeaders,
   });
 

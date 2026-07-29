@@ -17,6 +17,10 @@ export const Stock = () => {
                 <Link to="/new-insume">
                     Cadastrar Novo Insumo
                 </Link>
+
+                <Link to="/category">
+                    Visualizar Categorias
+                </Link>
                 <h2 className='text-2xl font-semibold text-gray-700'>Tabela de Insumos</h2>
 
                 <StockTable

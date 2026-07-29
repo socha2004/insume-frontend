@@ -7,6 +7,10 @@ import { Stock } from './pages/Stock'
 import { StockTable } from './molecules/StockPage/StockTable'
 import { NewInsume } from './pages/NewInsume'
 import { NewInsumeForm } from './molecules/NewInsumeForm/NewInsumeForm'
+import { Category } from './pages/Category'
+import { CategoryTable } from './molecules/Categoria/CategoryTable'
+import { NewCategory } from './pages/NewCategory'
+import { NewCategoryForm } from './molecules/Categoria/NewCategoryForm'
 
 export { 
     Home,
@@ -17,5 +21,9 @@ export {
     Stock,
     StockTable,
     NewInsume,
-    NewInsumeForm
+    NewInsumeForm,
+    Category,
+    CategoryTable,
+    NewCategory,
+    NewCategoryForm
  }
