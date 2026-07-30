@@ -11,6 +11,8 @@ import { Category } from './pages/Category'
 import { CategoryTable } from './molecules/Categoria/CategoryTable'
 import { NewCategory } from './pages/NewCategory'
 import { NewCategoryForm } from './molecules/Categoria/NewCategoryForm'
+import { EditCategory } from './pages/EditCategory'
+import { EditCategoryForm } from './molecules/Categoria/EditCategoryForm'
 
 export { 
     Home,
@@ -25,5 +27,7 @@ export {
     Category,
     CategoryTable,
     NewCategory,
-    NewCategoryForm
+    NewCategoryForm,
+    EditCategory,
+    EditCategoryForm
  }

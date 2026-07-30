@@ -1,6 +1,6 @@
 import { useState, useEffect, useMemo } from "react"
 
-interface Category {
+interface Categoria {
     id: number
     nome: string
 }

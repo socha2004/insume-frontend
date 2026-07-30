@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 import { PrivateRoute } from "./PrivateRoute";
 
-import { Home, Stock, LoginPage, NewInsume, Category, NewCategory } from "../components"
+import { Home, Stock, LoginPage, NewInsume, Category, NewCategory, EditCategory } from "../components"
 import { RegisterPage } from "../components/pages/RegisterPage";
 
 
@@ -21,6 +21,7 @@ export const routesApp = () => {
 
                 <Route path="/category" element={<Category />} />
                 <Route path="/new-category" element={<NewCategory />} />
+                <Route path="/edit-category/:id" element={<EditCategory />} />
             </Route>
         </Routes>
     )
