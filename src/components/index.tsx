@@ -13,6 +13,8 @@ import { NewCategory } from './pages/NewCategory'
 import { NewCategoryForm } from './molecules/Categoria/NewCategoryForm'
 import { EditCategory } from './pages/EditCategory'
 import { EditCategoryForm } from './molecules/Categoria/EditCategoryForm'
+import { DeleteCategory } from './pages/DeleteCategory'
+import { DeleteCategoryForm } from './molecules/Categoria/DeleteCategoryForm'
 
 export { 
     Home,
@@ -29,5 +31,7 @@ export {
     NewCategory,
     NewCategoryForm,
     EditCategory,
-    EditCategoryForm
+    EditCategoryForm,
+    DeleteCategory,
+    DeleteCategoryForm
  }

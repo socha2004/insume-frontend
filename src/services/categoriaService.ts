@@ -41,5 +41,12 @@ export const categoriaService = {
             body: data,
             skipAuth: false
         });
+    },
+
+    async deleteCategoria(id: number) {
+        return api(`/api/Categoria/${id}`, {
+            method: "DELETE",
+            skipAuth: false
+        });
     }
 }

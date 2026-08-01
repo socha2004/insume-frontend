@@ -31,8 +31,9 @@ export const NewCategoryForm = () => {
                         type="text"
                         onChange={(e) => setCategoria(e.target.value)}
                         placeholder="Ex: Limpeza, Alimentação"
-                        className="p-2 rounded border-1 border-gray-400"
+                        className="p-2 rounded border border-gray-400"
                         value={categoria}
+                        required
                     />
                 </div>
                 {
@@ -47,7 +48,7 @@ export const NewCategoryForm = () => {
                 }
                 <input
                     type="submit"
-                    className="mt-4 w-[50%] p-1 bg-green-500 rounded-sm text-amber-50 shadow-md shadow-sm transition-shadow duration-300 hover:shadow-xl "
+                    className="mt-4 w-[50%] p-1 bg-green-500 rounded-sm text-amber-50  shadow-sm transition-shadow duration-300 hover:shadow-xl "
                     value={loading ? "Salvando..." : "Cadastrar"}
                 />
             </form>
