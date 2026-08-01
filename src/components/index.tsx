@@ -7,6 +7,14 @@ import { Stock } from './pages/Stock'
 import { StockTable } from './molecules/StockPage/StockTable'
 import { NewInsume } from './pages/NewInsume'
 import { NewInsumeForm } from './molecules/NewInsumeForm/NewInsumeForm'
+import { Category } from './pages/Category'
+import { CategoryTable } from './molecules/Categoria/CategoryTable'
+import { NewCategory } from './pages/NewCategory'
+import { NewCategoryForm } from './molecules/Categoria/NewCategoryForm'
+import { EditCategory } from './pages/EditCategory'
+import { EditCategoryForm } from './molecules/Categoria/EditCategoryForm'
+import { DeleteCategory } from './pages/DeleteCategory'
+import { DeleteCategoryForm } from './molecules/Categoria/DeleteCategoryForm'
 
 export { 
     Home,
@@ -17,5 +25,13 @@ export {
     Stock,
     StockTable,
     NewInsume,
-    NewInsumeForm
+    NewInsumeForm,
+    Category,
+    CategoryTable,
+    NewCategory,
+    NewCategoryForm,
+    EditCategory,
+    EditCategoryForm,
+    DeleteCategory,
+    DeleteCategoryForm
  }
