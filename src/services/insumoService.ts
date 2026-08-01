@@ -11,7 +11,7 @@ export interface CreateInsumoDTO {
     estoqueMinimo: number;
     dataValidade: string;
     marca: string;
-    observação: string;
+    observacao: string;
     idCategoria: number | string;
     idUsuario: number | string;
 }

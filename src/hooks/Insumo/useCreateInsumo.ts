@@ -26,6 +26,6 @@ export const useCreateInsumo = () => {
             setLoading(false);
         }
 
-        return {loading, error, createInsumo};
     }
+    return {loading, error, createInsumo};
 }
