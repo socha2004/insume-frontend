@@ -16,6 +16,7 @@ import { EditCategoryForm } from './molecules/Categoria/EditCategoryForm'
 import { DeleteCategory } from './pages/DeleteCategory'
 import { DeleteCategoryForm } from './molecules/Categoria/DeleteCategoryForm'
 import { EditInsumo } from './pages/EditInsumo'
+import { EditInsumeForm } from './molecules/Insumo/EditInsumeForm'
 import { Spinner } from './atoms/spinner/spinner'
 
 export { 
@@ -37,5 +38,6 @@ export {
     DeleteCategory,
     DeleteCategoryForm,
     EditInsumo,
-    Spinner
+    Spinner,
+    EditInsumeForm
  }
