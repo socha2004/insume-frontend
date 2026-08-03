@@ -15,6 +15,7 @@ import { EditCategory } from './pages/EditCategory'
 import { EditCategoryForm } from './molecules/Categoria/EditCategoryForm'
 import { DeleteCategory } from './pages/DeleteCategory'
 import { DeleteCategoryForm } from './molecules/Categoria/DeleteCategoryForm'
+import { EditInsumo } from './pages/EditInsumo'
 
 export { 
     Home,
@@ -33,5 +34,6 @@ export {
     EditCategory,
     EditCategoryForm,
     DeleteCategory,
-    DeleteCategoryForm
+    DeleteCategoryForm,
+    EditInsumo
  }

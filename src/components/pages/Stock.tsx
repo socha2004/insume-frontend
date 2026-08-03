@@ -29,10 +29,10 @@ export const Stock = () => {
                     loading={loading}
                     error={error}
                     refetch={refetch}
-                    onView={(insumo) => navigate(`/insumos/${insumo.id}`)}
+                    onView={(insumo) => navigate(`/edit-insume/${insumo.id}`)}
                     onDelete={(insumo) => {
                         if (confirm(`Excluir ${insumo.nome}?`)) {
-                            excluirInsumo(insumo.id).then(refetch); // refetch já existe no seu hook!
+                            excluirInsumo(insumo.id).then(refetch); 
                         }
                     }}
                 />
