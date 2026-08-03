@@ -30,5 +30,12 @@ export const insumoService = {
         body: data,
         skipAuth: false
     });
+  },
+
+  async getInsumoById(id: number): Promise<insumoServiceData> {
+    return api(`/api/Insumo/${id}`, {
+        method: "GET",
+        skipAuth: false
+    });
   }
 }
