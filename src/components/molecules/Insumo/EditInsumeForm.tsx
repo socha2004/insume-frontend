@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { useUpdateInsumo } from "../../../hooks/Insumo/useUpdateInsumo";
+import { formatarData } from "../../../utils/formataData";
 
 interface Insumo {
     id: number;
@@ -21,15 +23,28 @@ interface EditInsumeFormProps {
 
 export const EditInsumeForm = (props: EditInsumeFormProps) => {
     const [formData, setFormData] = useState<Insumo | null>(props.data);
+    const {loading, error, updateInsumo} = useUpdateInsumo();
+    const [success, setSuccess] = useState("")
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
         setFormData((prev) => prev ? { ...prev, [name]: value } : null);
     };
 
+    async function handleSubmit(e: React.FormEvent) {
+        e.preventDefault();
+        await updateInsumo(props.data?.id, formData);
+
+        setSuccess("Insumo atualizado com sucesso!");
+
+        setTimeout(() => {
+            setSuccess("");
+        }, 1000);
+    }
+
     return (
         <div>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
 
                     <div className="flex flex-col">
@@ -66,7 +81,7 @@ export const EditInsumeForm = (props: EditInsumeFormProps) => {
                         <label className="font-bold">Data de Validade</label>
                         <input
                             type="text"
-                            defaultValue={props.data?.dataValidade}
+                            defaultValue={formatarData(props.data?.dataValidade)}
                             onChange={handleChange} name="dataValidade"
                             className="p-2 rounded border border-gray-400"
                         />
@@ -94,8 +109,8 @@ export const EditInsumeForm = (props: EditInsumeFormProps) => {
 
                     <div className="flex flex-col">
                         <label className="font-bold">Categoria</label>
-                        <select onChange={handleChange} name="idCategoria" className="p-2 rounded border border-gray-400">
-                            <option value={props.data?.idCategoria}>{props.data?.categoria}</option>
+                        <select value={formData?.idCategoria} onChange={handleChange} name="idCategoria" className="p-2 rounded border border-gray-400">
+                            <option key={props.data?.idCategoria} value={props.data?.idCategoria}>{props.data?.categoria}</option>
                         </select>
                     </div>
 
@@ -108,10 +123,12 @@ export const EditInsumeForm = (props: EditInsumeFormProps) => {
                             className="p-2 rounded border border-gray-400"
                         />
                     </div>
-
-                    <div className="flex justify-center mt-4">
-                        <input type="submit" value={props.loading ? "Atualizando..." : "Atualizar Insumo"} className="p-3 bg-green-500 rounded-2xl text-amber-50 shadow-md " />
-                    </div>
+                </div>
+                
+                {error && <p className="text-red-500">{error}</p>}
+                {success && <p className="text-green-600">{success}</p>}
+                <div className="flex justify-center mt-4">
+                    <input type="submit" value={loading ? "Atualizando..." : "Atualizar Insumo"} className="p-3 bg-green-500 rounded-2xl text-amber-50 shadow-md " />
                 </div>
             </form>
         </div>
