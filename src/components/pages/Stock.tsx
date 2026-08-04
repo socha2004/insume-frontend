@@ -30,11 +30,7 @@ export const Stock = () => {
                     error={error}
                     refetch={refetch}
                     onView={(insumo) => navigate(`/edit-insume/${insumo.id}`)}
-                    onDelete={(insumo) => {
-                        if (confirm(`Excluir ${insumo.nome}?`)) {
-                            excluirInsumo(insumo.id).then(refetch); 
-                        }
-                    }}
+                    onDelete={(insumo) => navigate(`/delete-insume/${insumo.id}`)}
                 />
             </div>
         </div>
