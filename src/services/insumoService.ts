@@ -56,5 +56,12 @@ export const insumoService = {
       body: data,
       skipAuth: false
     });
+  },
+
+  async deleteInsumo(id: number) {
+    return api(`/api/Insumo/${id}`, {
+      method: "DELETE",
+      skipAuth: false
+    });
   }
 }
