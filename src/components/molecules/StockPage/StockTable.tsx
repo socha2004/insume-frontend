@@ -132,13 +132,13 @@ export const StockTable = (props: StockTableProps) => {
                   <div className="flex gap-2">
                     <button
                       onClick={() => props.onView?.(insumo)}
-                      className="text-blue-600 hover:underline text-sm"
+                      className="text-amber-50 hover:underline text-sm p-2 bg-green-500 rounded-sm"
                     >
                       Visualizar
                     </button>
                     <button
                       onClick={() => props.onDelete?.(insumo)}
-                      className="text-red-600 hover:underline text-sm"
+                     className="text-amber-50 hover:underline text-sm p-2 bg-red-500 rounded-sm"
                     >
                       Excluir
                     </button>
