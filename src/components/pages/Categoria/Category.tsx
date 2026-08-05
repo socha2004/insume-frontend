@@ -1,5 +1,5 @@
-import { useCategoria } from "../../hooks/Categoria/useCategoria"
-import { CategoryTable } from "../../components";
+import { useCategoria } from "../../../hooks/Categoria/useCategoria"
+import { CategoryTable } from "../..";
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 

@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
-import { DeleteCategoryForm } from "../molecules/Categoria/DeleteCategoryForm";
-import { useViewCategoria } from "../../hooks/Categoria/useViewCategoria";
+import { DeleteCategoryForm } from "../../molecules/Categoria/DeleteCategoryForm";
+import { useViewCategoria } from "../../../hooks/Categoria/useViewCategoria";
 
 export const DeleteCategory = () => {
     const { id } = useParams<{ id: string }>();

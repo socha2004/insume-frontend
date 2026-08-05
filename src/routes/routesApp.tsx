@@ -2,17 +2,19 @@ import { Route, Routes } from "react-router-dom";
 import { Navigate } from "react-router-dom";
 import { PrivateRoute } from "./PrivateRoute";
 
-import { Home, Stock, LoginPage, NewInsume, Category, NewCategory, EditCategory, DeleteCategory, DeleteInsumo } from "../components"
-import { EditInsumo } from "../components/pages/EditInsumo";
-import { RegisterPage } from "../components/pages/RegisterPage";
+import { Home, Stock, LoginPage, NewInsume, Category, NewCategory, EditCategory, DeleteCategory, DeleteInsumo, AuthPage } from "../components"
+import { EditInsumo } from "../components/pages/Insumo/EditInsumo";
+import { RegisterPage } from "../components/pages/Auth/RegisterPage";
 
 
 export const routesApp = () => {
     return (
         <Routes>
-            <Route path="/login" element={<LoginPage />} />
-            <Route path="/register" element={<RegisterPage />} />
-
+            <Route element={<AuthPage />}>
+                <Route path="/login" element={<LoginPage />} />
+                <Route path="/register" element={<RegisterPage />} />
+            </Route>
+            
             <Route element={<PrivateRoute />}>
                 <Route path="/" element={<Home />} />
                 <Route path="*" element={<Navigate to="/" />} />

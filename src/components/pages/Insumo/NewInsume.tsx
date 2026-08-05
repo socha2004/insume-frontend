@@ -1,4 +1,4 @@
-import { NewInsumeForm } from "../../components"
+import { NewInsumeForm } from "../.."
 
 export const NewInsume = () => {
     return (

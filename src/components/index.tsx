@@ -1,24 +1,25 @@
 import { Home } from './pages/Home'
 import { Navbar } from './molecules/Navbar/Navbar'
-import { LoginPage } from './pages/LoginPage'
-import { RegisterPage } from './pages/RegisterPage'
+import { LoginPage } from './pages/Auth/LoginForm'
+import { RegisterPage } from './pages/Auth/RegisterPage'
 import { StockResume } from './molecules/StockResume/StockResume'
-import { Stock } from './pages/Stock'
+import { Stock } from './pages/Insumo/Stock'
 import { StockTable } from './molecules/StockPage/StockTable'
-import { NewInsume } from './pages/NewInsume'
+import { NewInsume } from './pages/Insumo/NewInsume'
 import { NewInsumeForm } from './molecules/NewInsumeForm/NewInsumeForm'
-import { Category } from './pages/Category'
+import { Category } from './pages/Categoria/Category'
 import { CategoryTable } from './molecules/Categoria/CategoryTable'
-import { NewCategory } from './pages/NewCategory'
+import { NewCategory } from './pages/Categoria/NewCategory'
 import { NewCategoryForm } from './molecules/Categoria/NewCategoryForm'
-import { EditCategory } from './pages/EditCategory'
+import { EditCategory } from './pages/Categoria/EditCategory'
 import { EditCategoryForm } from './molecules/Categoria/EditCategoryForm'
-import { DeleteCategory } from './pages/DeleteCategory'
+import { DeleteCategory } from './pages/Categoria/DeleteCategory'
 import { DeleteCategoryForm } from './molecules/Categoria/DeleteCategoryForm'
-import { EditInsumo } from './pages/EditInsumo'
+import { EditInsumo } from './pages/Insumo/EditInsumo'
 import { EditInsumeForm } from './molecules/Insumo/EditInsumeForm'
 import { DeleteInsumeForm } from './molecules/Insumo/DeleteInsumeForm'
-import { DeleteInsumo } from './pages/DeleteInsumo'
+import { DeleteInsumo } from './pages/Insumo/DeleteInsumo'
+import { AuthPage } from './pages/Auth/AuthPage'
 import { Spinner } from './atoms/spinner/spinner'
 
 export { 
@@ -43,5 +44,6 @@ export {
     Spinner,
     EditInsumeForm,
     DeleteInsumeForm,
-    DeleteInsumo
+    DeleteInsumo,
+    AuthPage
  }

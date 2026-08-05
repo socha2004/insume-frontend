@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom"
-import { useViewCategoria } from "../../hooks/Categoria/useViewCategoria";
-import { EditCategoryForm } from "../../components";
+import { useViewCategoria } from "../../../hooks/Categoria/useViewCategoria";
+import { EditCategoryForm } from "../..";
 
 export const EditCategory = () => {
     const { id } = useParams<{ id: string }>();

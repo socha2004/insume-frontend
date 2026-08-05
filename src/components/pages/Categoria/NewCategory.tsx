@@ -1,4 +1,4 @@
-import { NewCategoryForm } from "../../components"
+import { NewCategoryForm } from "../.."
 
 export const NewCategory = () => {
     return (
