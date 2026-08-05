@@ -66,7 +66,7 @@ export const LoginPage = () => {
                 
                 {error && <p className="text-red-500">{error}</p>}
                 <button type="submit" className="bg-brand-success text-white py-2 px-4 rounded-md hover:bg-brand-secondary hover:text-black transition-colors">
-                    {loading ? <Spinner size="w-6 h-6" color="border-blue-600" /> : "Login"}
+                    {loading ? <Spinner size="w-6 h-6" color="border-white" /> : "Login"}
                 </button>
                 <Link to="/register" className="text-blue-500 hover:underline">
                     Ainda não tem uma conta? Cadastre-se
