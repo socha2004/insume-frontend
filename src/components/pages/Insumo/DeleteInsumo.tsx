@@ -18,7 +18,7 @@ export const DeleteInsumo = () => {
                 <h1 className="text-2xl font-bold text-black text-center">Deletar Insumo</h1>
             </div>
 
-            <div className="mt-4 p-4 rounded-lg shadow-md border-gray-300 border">
+            <div className="mt-4 p-4 rounded-lg shadow-md border-gray-300 border bg-white">
                 <DeleteInsumeForm data={data} loading={loading} error={error} />
             </div>
         </div>

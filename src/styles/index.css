@@ -12,3 +12,7 @@
     --color-brand-success: #4CAF50;
     --color-brand-tertiary: #B4E1EB;
 }
+
+body {
+    background-color: #E8EEF2;
+}
