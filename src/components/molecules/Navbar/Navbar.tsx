@@ -4,22 +4,6 @@ import { Link, NavLink } from "react-router-dom"
 import { useState } from 'react';
 import { useViewport } from '../../../hooks/useViewport'
 
-interface NavLinkType {
-    name: string;
-    path: string;
-}
-
-const navLinks: NavLinkType[] = [
-    {
-        name: 'Home',
-        path: '/',
-    },
-    {
-        name: 'Estoque',
-        path: '/stock',
-    }
-]
-
 export const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
     const { usuario, logout } = useAuth();
@@ -51,7 +35,7 @@ export const Navbar = () => {
                     {/* Desktop */}
                     {!isMobile && (
                         <div className="flex items-center gap-5">
-                            <span>Bem-vindo! {usuario?.nome}</span>
+                            <span>Bem-vindo! {usuario?.nome}  |</span>
 
                             <Link to="/">Home</Link>
                             <Link to="/stock">Estoque</Link>
