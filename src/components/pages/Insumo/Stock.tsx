@@ -1,5 +1,5 @@
-import { StockTable } from "../../components"
-import { useDashboard } from "../../hooks/useDashboard"
+import { StockTable } from "../.."
+import { useDashboard } from "../../../hooks/useDashboard"
 import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
 

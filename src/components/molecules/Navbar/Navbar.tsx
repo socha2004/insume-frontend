@@ -1,34 +1,109 @@
-import NavbarIcon from '/public/navbar-icon.svg'
+import NavbarIcon from '../../../assets/box-icon.svg'
 import { useAuth } from '../../../context/AuthContext'
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
+import { useState } from 'react';
+import { useViewport } from '../../../hooks/useViewport'
 
 export const Navbar = () => {
+    const [isMenuOpen, setIsMenuOpen] = useState(false)
     const { usuario, logout } = useAuth();
 
-    return (
-        <nav className="flex justify-between items-center mb-[10px] p-[10px] bg-brand-primary text-white shadow-[0_4px_6px_-1px_rgba(0,0,0,0.1)]">
-            <h1 className="text-2xl font-bold flex items-center gap-[10px] ">
-                <img src={NavbarIcon} alt="Insume Logo" className="w-[30px] h-[30px]" />
-                Insume
-            </h1>
+    const { width } = useViewport();
 
-            <div className="flex gap-[15px]">
-                <span>
-                    {usuario ? `Bem-vindo! ${usuario.nome} |` : 'Não autenticado'}
-                </span>
-                <Link to="/" className="hover:underline">
-                    Home
-                </Link>
-                <Link to="/stock" className="hover:underline">
-                    Estoque
-                </Link>
-                <Link to="/about" className="hover:underline">
-                    Sobre
-                </Link>
-                <button onClick={logout} className="hover:underline">
-                    Sair
-                </button>
-            </div>
-        </nav>
+    const isMobile = width < 768
+
+    const toggleMenu = () => {
+        setIsMenuOpen(!isMenuOpen)
+    }
+
+    const closeMenuOnMobile = () => {
+        if (isMobile) {
+            setIsMenuOpen(false)
+        }
+    }
+    return (
+        <header>
+            <nav className="bg-cyan-800 text-white shadow-md">
+                <div className="flex justify-between items-center p-3">
+
+                    {/* Logo */}
+                    <h1 className="text-2xl font-bold flex items-center gap-2">
+                        <img src={NavbarIcon} alt="Logo" className="w-8 h-8" />
+                        Insume
+                    </h1>
+
+                    {/* Desktop */}
+                    {!isMobile && (
+                        <div className="flex items-center gap-5">
+                            <span>Bem-vindo! {usuario?.nome}  |</span>
+
+                            <Link to="/">Home</Link>
+                            <Link to="/stock">Estoque</Link>
+                            <Link to="/about">Sobre</Link>
+
+                            <button onClick={logout}>
+                                Sair
+                            </button>
+                        </div>
+                    )}
+
+                    {/* Mobile */}
+                    {isMobile && (
+                        <button
+                            onClick={toggleMenu}
+                            className="text-3xl"
+                        >
+                            ☰
+                        </button>
+                    )}
+                </div>
+
+                {/* Menu Mobile */}
+                {isMobile && isMenuOpen && (
+                    <div className="flex flex-col border-t border-cyan-700">
+
+                        <span className="px-4 py-3">
+                            Bem-vindo! {usuario?.nome}
+                        </span>
+
+                        <Link
+                            to="/"
+                            onClick={closeMenuOnMobile}
+                            className="px-4 py-3 hover:bg-cyan-700"
+                        >
+                            Home
+                        </Link>
+
+                        <Link
+                            to="/stock"
+                            onClick={closeMenuOnMobile}
+                            className="px-4 py-3 hover:bg-cyan-700"
+                        >
+                            Estoque
+                        </Link>
+
+                        <Link
+                            to="/about"
+                            onClick={closeMenuOnMobile}
+                            className="px-4 py-3 hover:bg-cyan-700"
+                        >
+                            Sobre
+                        </Link>
+
+                        <button
+                            onClick={() => {
+                                logout();
+                                closeMenuOnMobile();
+                            }}
+                            className="text-left px-4 py-3 hover:bg-cyan-700"
+                        >
+                            Sair
+                        </button>
+
+                    </div>
+                )}
+            </nav>
+        </header>
+
     )
 }
