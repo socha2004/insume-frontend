@@ -7,6 +7,7 @@ interface StockCardProps {
     icon: React.ReactNode;
     label: string;
     data: object[] | null;
+    categorias: object[] | null;
     color?: string;
     textColor?: string;
 }
@@ -30,7 +31,7 @@ export const StockCard = (props: StockCardProps) => {
                         Total de insumos cadastrados:
                     </span>
                     <span style={{ color: props.textColor || 'gray' }} className="text-3xl font-bold">
-                        {props.data?.length > 0 ? props.data.length : 'N/A'}
+                        {props.data?.length > 0 ? props.data.length : 0}
                     </span>
                 </div>
             </div>
@@ -67,7 +68,7 @@ export const StockCard = (props: StockCardProps) => {
 
                 <div className='flex flex-col text-white'>
                     <span>Total de categorias:</span>
-                    <span className="text-3xl font-bold">{[...new Set(props.data?.map((item) => item.categoria))].length || 0}</span>
+                    <span className="text-3xl font-bold">{props.categorias?.length || 0}</span>
                 </div>
             </div>
         </div>

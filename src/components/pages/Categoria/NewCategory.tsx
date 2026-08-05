@@ -7,7 +7,7 @@ export const NewCategory = () => {
                 <h1 className="text-2xl font-bold text-black text-center">Cadastro de Categoria</h1>
             </div>
 
-            <div className="mt-4 p-4 rounded-lg shadow-md border-gray-300 border-1 w-[fit-content]">
+            <div className="mt-4 p-4 rounded-lg shadow-md border-gray-300 border w-fit bg-white">
                 <NewCategoryForm />
             </div>
         </div>

@@ -14,6 +14,9 @@ export const StockRemain = (props: StockRemainProps) => {
         <div className="mt-4">
             <h2 className='text-3xl font-semibold text-gray-700'>Itens com estoque baixo</h2>
             <ul className="border-gray-300 border-2 rounded-lg p-4 mt-2">
+                {props.data && props.data.length === 0 && (
+                    <p className="text-gray-500">Nenhum item com estoque baixo encontrado.</p>
+                )}
                 {props.data
                     ?.filter((insumo) => insumo.quantidade < insumo.estoqueMinimo)
                     .map((insumo) => {
