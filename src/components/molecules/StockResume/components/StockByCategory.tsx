@@ -29,6 +29,9 @@ export const StockByCategory = (props: StockByCategoryProps) => {
             <h2 className='text-3xl font-semibold text-gray-700'>Estoque por categoria</h2>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mt-4">
+                {categorias && Object.keys(categorias).length === 0 && (
+                    <p className="text-gray-500">Sem dados para exibir. Preencha seu estoque!</p>
+                )}
                 {Object.entries(categorias ?? {}).map(
                     ([categoria, quantidade]) => (
                         <div

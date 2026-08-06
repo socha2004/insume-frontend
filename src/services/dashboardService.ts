@@ -11,4 +11,11 @@ export const dashboardService = {
         skipAuth: false
     });
   },
+
+  async getCategorias(): Promise<dashboardServiceData> {
+    return api("/api/Categoria", {
+        method: "GET",
+        skipAuth: false
+    });
+  }
 };

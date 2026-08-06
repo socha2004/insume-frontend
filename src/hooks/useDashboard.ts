@@ -5,6 +5,7 @@ interface UseDashboardResult {
   data: dashboardServiceData | null;
   loading: boolean;
   error: string | null;
+  categorias: dashboardServiceData | null;
   refetch: () => void;
 }
 
@@ -12,6 +13,7 @@ export function useDashboard(): UseDashboardResult {
   const [data, setData] = useState<dashboardServiceData | null>(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
+  const [categorias, setCategorias] = useState<dashboardServiceData | null>(null);
 
   async function fetchData() {
     try {
@@ -26,9 +28,23 @@ export function useDashboard(): UseDashboardResult {
     }
   }
 
+  async function fetchCategorias() {
+    try {
+      setLoading(true);
+      setError(null);
+      const result = await dashboardService.getCategorias();
+      setCategorias(result.length > 0 ? result : null);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Erro ao carregar dados");
+    } finally {
+      setLoading(false);
+    }
+  }
+
   useEffect(() => {
     fetchData();
+    fetchCategorias();
   }, []);
 
-  return { data, loading, error, refetch: fetchData };
+  return { data, loading, error, refetch: fetchData, categorias };
 }

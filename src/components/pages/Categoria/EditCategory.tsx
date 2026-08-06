@@ -12,7 +12,7 @@ export const EditCategory = () => {
                 <h1 className="text-2xl font-bold text-black text-center">Visualizar/Atualizar Categoria</h1>
             </div>
 
-            <div className="mt-4 p-4 rounded-lg shadow-md border-gray-300 border-1 w-[fit-content]">
+            <div className="mt-4 p-4 rounded-lg shadow-md border-gray-300 border w-fit bg-white">
                 <EditCategoryForm data={data} error={error} loading={loading}/>
             </div>
         </div>

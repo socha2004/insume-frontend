@@ -12,7 +12,8 @@ export const DeleteCategory = () => {
                 <h1 className="text-2xl font-bold text-black text-center">Excluir Categoria</h1>
             </div>
 
-            <div className="mt-4 p-4 rounded-lg shadow-md border-gray-300 border-1 w-[fit-content]">
+            <div className="mt-4 p-4 rounded-lg shadow-md border-gray-300 border max-w-[50%] w-fit bg-white">
+                <p className="text-red-400 text-[0.875rem]  text-center">* Atenção, ao excluir uma categoria, todos os produtos associados serão removidos.</p>
                 <DeleteCategoryForm data={data} error={error} loading={loading}/>
             </div>
         </div>

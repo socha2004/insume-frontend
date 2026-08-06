@@ -7,7 +7,7 @@ export const NewInsume = () => {
                 <h1 className="text-2xl font-bold text-black text-center">Cadastro de Insumo</h1>
             </div>
 
-            <div className="mt-4 p-4 rounded-lg shadow-md border-gray-300 border-1">
+            <div className="mt-4 p-4 rounded-lg shadow-md border-gray-300 border bg-white">
                 <NewInsumeForm />
             </div>
         </div>

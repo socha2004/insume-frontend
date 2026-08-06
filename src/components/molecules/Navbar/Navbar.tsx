@@ -39,7 +39,7 @@ export const Navbar = () => {
 
                             <Link to="/">Home</Link>
                             <Link to="/stock">Estoque</Link>
-                            <Link to="/about">Sobre</Link>
+                            <Link to="/category">Categoria</Link>
 
                             <button onClick={logout}>
                                 Sair
@@ -83,11 +83,11 @@ export const Navbar = () => {
                         </Link>
 
                         <Link
-                            to="/about"
+                            to="/category"
                             onClick={closeMenuOnMobile}
                             className="px-4 py-3 hover:bg-cyan-700"
                         >
-                            Sobre
+                            Categorias
                         </Link>
 
                         <button
