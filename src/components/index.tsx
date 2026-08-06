@@ -21,6 +21,7 @@ import { DeleteInsumeForm } from './molecules/Insumo/DeleteInsumeForm'
 import { DeleteInsumo } from './pages/Insumo/DeleteInsumo'
 import { AuthPage } from './pages/Auth/AuthPage'
 import { Spinner } from './atoms/spinner/spinner'
+import { Footer } from './molecules/Footer/Footer'
 
 export { 
     Home,
@@ -45,5 +46,6 @@ export {
     EditInsumeForm,
     DeleteInsumeForm,
     DeleteInsumo,
-    AuthPage
+    AuthPage,
+    Footer
  }
