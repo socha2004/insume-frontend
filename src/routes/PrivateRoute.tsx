@@ -1,6 +1,6 @@
 import { Navigate, Outlet, useLocation } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
-import { Navbar } from "../components";
+import { Footer, Navbar } from "../components";
 
 export function PrivateRoute() {
   const { isAuthenticated, loading } = useAuth();
@@ -17,8 +17,11 @@ export function PrivateRoute() {
 
   return (
     <>
-      <Navbar/>
-      <Outlet />
+      <Navbar />
+      <div className="mt-16 min-h-screen">
+        <Outlet />
+      </div>
+      <Footer />
     </>
-  ) ;
+  );
 }
