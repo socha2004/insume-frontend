@@ -11,7 +11,7 @@ export const StockRemain = (props: StockRemainProps) => {
     if (props.error) return <p>Erro: {props.error}</p>;
 
     return (
-        <div className="mt-4">
+        <div className="mt-4 w-full">
             <h2 className='text-3xl font-semibold text-gray-700'>Itens com estoque baixo</h2>
             <ul className="border-gray-300 border-2 rounded-lg p-4 mt-2">
                 {props.data && props.data.length === 0 && (

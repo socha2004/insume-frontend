@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useUpdateInsumo } from "../../../hooks/Insumo/useUpdateInsumo";
-import { formatarData } from "../../../utils/formataData";
 
 interface Insumo {
     id: number;
@@ -23,8 +22,10 @@ interface EditInsumeFormProps {
 
 export const EditInsumeForm = (props: EditInsumeFormProps) => {
     const [formData, setFormData] = useState<Insumo | null>(props.data);
-    const {loading, error, updateInsumo} = useUpdateInsumo();
+    const { loading, error, updateInsumo } = useUpdateInsumo();
     const [success, setSuccess] = useState("")
+
+    const hoje = new Date().toISOString().split("T")[0];
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
@@ -42,6 +43,8 @@ export const EditInsumeForm = (props: EditInsumeFormProps) => {
         }, 1000);
     }
 
+
+    console.log(formData?.dataValidade);
     return (
         <div>
             <form onSubmit={handleSubmit}>
@@ -80,10 +83,11 @@ export const EditInsumeForm = (props: EditInsumeFormProps) => {
                     <div className="flex flex-col">
                         <label className="font-bold">Data de Validade</label>
                         <input
-                            type="text"
-                            defaultValue={formatarData(props.data?.dataValidade)}
+                            type="date"
+                            value={formData?.dataValidade ?? ""}
                             onChange={handleChange} name="dataValidade"
                             className="p-2 rounded border border-gray-400"
+                            min={hoje}
                         />
                     </div>
 
@@ -124,7 +128,7 @@ export const EditInsumeForm = (props: EditInsumeFormProps) => {
                         />
                     </div>
                 </div>
-                
+
                 {error && <p className="text-red-500">{error}</p>}
                 {success && <p className="text-green-600">{success}</p>}
                 <div className="flex justify-center mt-4">

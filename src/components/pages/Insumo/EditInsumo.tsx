@@ -16,7 +16,7 @@ export const EditInsumo = () => {
     return (
         <div className="p-4 flex flex-col items-center">
             <div>
-                <h1 className="text-2xl font-bold text-black text-center">Visualizar/Atualizar Categoria</h1>
+                <h1 className="text-2xl font-bold text-black text-center">Visualizar/Atualizar Insumo</h1>
             </div>
 
             <div className="mt-4 p-4 rounded-lg shadow-md border-gray-300 border bg-white">

@@ -6,7 +6,7 @@ import { StockResume } from './molecules/StockResume/StockResume'
 import { Stock } from './pages/Insumo/Stock'
 import { StockTable } from './molecules/StockPage/StockTable'
 import { NewInsume } from './pages/Insumo/NewInsume'
-import { NewInsumeForm } from './molecules/NewInsumeForm/NewInsumeForm'
+import { NewInsumeForm } from './molecules/Insumo/NewInsumeForm'
 import { Category } from './pages/Categoria/Category'
 import { CategoryTable } from './molecules/Categoria/CategoryTable'
 import { NewCategory } from './pages/Categoria/NewCategory'
@@ -22,6 +22,7 @@ import { DeleteInsumo } from './pages/Insumo/DeleteInsumo'
 import { AuthPage } from './pages/Auth/AuthPage'
 import { Spinner } from './atoms/spinner/spinner'
 import { Footer } from './molecules/Footer/Footer'
+import {NextToExpiration} from './molecules/StockResume/components/NextToExpiration'
 
 export { 
     Home,
@@ -47,5 +48,6 @@ export {
     DeleteInsumeForm,
     DeleteInsumo,
     AuthPage,
-    Footer
+    Footer,
+    NextToExpiration
  }
