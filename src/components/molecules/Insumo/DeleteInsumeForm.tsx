@@ -43,6 +43,7 @@ export const DeleteInsumeForm = (props: EditInsumeFormProps) => {
 
     return (
         <div>
+            <span className="font-bold text-red-400 text-sm " translate="no">* Tem certeza que deseja excluir o insumo abaixo?</span>
             <form onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
 

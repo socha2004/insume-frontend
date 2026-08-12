@@ -58,9 +58,9 @@ export const NewInsumeForm = () => {
 
     return (
         <div>
-            <h2 className="text-1xl font-bold text-black text-left">Identificação do Insumo</h2>
-            <hr className="border border-gray-300 mb-4" />
-
+            <span className="font-bold text-red-400 text-sm " translate="no">* Lembre-se de cadastrar uma categoria previamente para prosseguir com o cadastro do insumo.</span>
+            <h2 className="text-1xl font-bold text-black text-left mt-4">Identificação do Insumo</h2>
+            <hr className="border border-gray-300 mb-2 " />
             <form method="POST" onSubmit={handleSubmit}>
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
                     <div className="flex flex-col">
