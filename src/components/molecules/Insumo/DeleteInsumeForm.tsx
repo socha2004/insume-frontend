@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useDeleteInsumo } from "../../../hooks/Insumo/useDeleteInsumo";
-import { formatarData } from "../../../utils/formataData";
 import { Spinner } from "../../atoms/spinner/spinner";
 import {useNavigate} from "react-router-dom";
 
@@ -81,7 +80,7 @@ export const DeleteInsumeForm = (props: EditInsumeFormProps) => {
                         <label className="font-bold">Data de Validade</label>
                         <input
                             type="text"
-                            defaultValue={formatarData(props.data?.dataValidade)}
+                            defaultValue={props.data?.dataValidade}
                             disabled
                             className="p-2 rounded border border-gray-400"
                         />
