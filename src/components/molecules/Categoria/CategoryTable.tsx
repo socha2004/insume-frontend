@@ -51,7 +51,7 @@ export const CategoryTable = (props: CategoryTableProps) => {
         setPaginaAtual(pagina);
     };
 
-    if (props.data === null && props.loading) return <p>Carregando insumos..</p>;
+    if (props.data === null && props.loading) return <p>Carregando categorias..</p>;
     if (props.error) return <p>Erro: {props.error}</p>;
 
     return (
