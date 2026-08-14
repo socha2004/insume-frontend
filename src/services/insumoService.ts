@@ -1,0 +1,67 @@
+import { api } from "./api";
+
+export interface insumoServiceData {
+  insumo: object;
+}
+
+export interface CreateInsumoDTO {
+  nome: string;
+  quantidade: number;
+  unidadeMedida: string;
+  estoqueMinimo: number;
+  dataValidade: string;
+  marca: string;
+  observacao: string;
+  idCategoria: number | string;
+  idUsuario: number | string;
+}
+
+export interface UpdateInsumoDTO {
+  nome: string;
+  quantidade: number;
+  unidadeMedida: string;
+  estoqueMinimo: number;
+  dataValidade: string;
+  marca: string;
+  observacao: string;
+  idCategoria: number | string;
+}
+
+export const insumoService = {
+  async getInsumos(): Promise<insumoServiceData> {
+    return api("/api/Insumo", {
+      method: "GET",
+      skipAuth: false
+    });
+  },
+
+  async createInsumo(data: CreateInsumoDTO) {
+    return api("/api/Insumo", {
+      method: "POST",
+      body: data,
+      skipAuth: false
+    });
+  },
+
+  async getInsumoById(id: number): Promise<insumoServiceData> {
+    return api(`/api/Insumo/${id}`, {
+      method: "GET",
+      skipAuth: false
+    });
+  },
+
+  async updateInsumo(id: number, data: UpdateInsumoDTO) {
+    return api(`/api/Insumo/${id}`, {
+      method: "PUT",
+      body: data,
+      skipAuth: false
+    });
+  },
+
+  async deleteInsumo(id: number) {
+    return api(`/api/Insumo/${id}`, {
+      method: "DELETE",
+      skipAuth: false
+    });
+  }
+}

@@ -1,0 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+@import "tailwindcss";
+
+* {
+    box-sizing: border-box;
+    font-family: 'Nunito', sans-serif;
+}
+
+@theme {
+    --color-brand-primary: #F62440;
+    --color-brand-secondary: #FFFAF3;
+    --color-brand-success: #4CAF50;
+    --color-brand-tertiary: #B4E1EB;
+}
+
+body {
+    background-color: #E8EEF2;
+}
