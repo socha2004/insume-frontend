@@ -9,7 +9,7 @@ Atualmente, a aplicação possui as seguintes funcionalidades:
 - Cadastro de insumos
 - Cadastro de categorias
 
-
+**Link para o repositório do back-end: https://github.com/socha2004/insume-backend**
 ## Stack Usada
 
 <p align="center">
