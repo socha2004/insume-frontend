@@ -77,6 +77,7 @@ export const RegisterPage = () => {
                 </div>
 
                 {error && <p className="text-red-500">{error}</p>}
+                <span>Ao criar uma conta, você concorda com nossos Termos de Uso e reconhece nossa <Link to="/privacy" className='underline'>Política de Privacidade.</Link></span>
                 <button type="submit" className="bg-brand-success text-white py-2 px-4 rounded-md hover:bg-brand-secondary hover:text-black transition-colors">
                    {loading ? <Spinner size="w-5 h-5" color="border-white" /> : "Cadastrar"}
                 </button>
