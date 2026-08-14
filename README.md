@@ -20,10 +20,10 @@ Atualmente, a aplicação possui as seguintes funcionalidades:
 
 A stack utilizada foi a seguinte:
 
-- React.js - Interface de usuário
-- TypeScript - Linguagem + tipagem
-- Vite - builder da aplicação
-- VS Code - IDE para desenvolvimento
+- **React.js** - Interface de usuário
+- **TypeScript** - Linguagem + tipagem
+- **Vite** - builder da aplicação
+- **VS Code** - IDE para desenvolvimento
 
 
 ## Estrutura do projeto
