@@ -1,77 +1,101 @@
-# React + TypeScript + Vite
+# Insume Front-end
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este repositório apresenta a aplicação front-end do projeto Insume, um sistema que organiza seu estoque doméstico.
 
-Currently, two official plugins are available:
+Atualmente, a aplicação possui as seguintes funcionalidades:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Cadastro de usuário e login
+- Dashboard inicial com resumo do estoque e categorias
+- Cadastro de insumos
+- Cadastro de categorias
 
-## React Compiler
 
-The React Compiler is enabled on this template. See [this documentation](https://react.dev/learn/react-compiler) for more information.
+## Stack Usada
 
-Note: This will impact Vite dev & build performances.
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=react,typescript,vite,nodejs,vscode" />
+  </a>
+</p>
 
-## Expanding the ESLint configuration
+A stack utilizada foi a seguinte:
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+- React.js - Interface de usuário
+- TypeScript - Linguagem + tipagem
+- Vite - builder da aplicação
+- VS Code - IDE para desenvolvimento
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+## Estrutura do projeto
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+A estrutura de pastas decidi utilizar o modelo JamStack, separando componentes como Atoms, molecules e pages. Para assim ter um melhor controle e organização. Segue diagrama da estrutura:
 
-```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+```text
+public/
+|
+src/
+|──assets/
+|──components/
+   |──atoms/
+   |──molecules/
+   |──pages/
+|──context/
+|──hooks/
+|──routes/
+|──services/
+|──styles/
+|──utils/
 
 ```
+
+## Executando
+
+Para executar você precisa dos seguintes itens:
+
+- Node.js (versão 18 ou superior recomendada)
+- npm (yarn ou pnpm também se aplica)
+
+### Instalando e Executando
+
+1. Clone o repositório para sua máquina e acesse a pasta do projeto
+```cmd
+cd insume-frontend
+```
+
+2. Instale as depêndencias de acordo com seu gerenciador de pacotes
+```cmd
+npm install 
+```
+
+3. Configure as variáveis de ambiente em um arquivo .env local
+
+```env
+VITE_BACKEND_URL=URL_DO_BACKEND
+VITE_AUTH_ENDPOINT=ENDPOINT_DE_AUTENTICAÇÃO
+```
+
+4. Inicie o servidor de desenvolvimento
+```
+npm run dev
+```
+
+## 🚀 Próximos passos
+
+Passos implementados e funcionalidades futuras que pretendo adicionar ao decorrer do tempo.
+
+- [x] Cadastro e autenticação de usuários
+- [x] Cadastro de insumos
+- [x] Gerenciamento de categorias
+- [x] Dashboard de estoque
+- [ ] Recuperação de senha por e-mail
+- [ ] Exportação de dados para Excel e PDF
+- [ ] Cadastro de lista de compras
+- [ ] Notificações de estoque baixo
+- [ ] Exibir mercados próximos
+- [ ] Registro de idas ao mercado
+
+> [!NOTE]
+> Este projeto está em desenvolvimento contínuo. A versão atual contempla as funcionalidades principais, enquanto novas funcionalidades estão planejadas para versões futuras.
+
+
+**Se você tiver alguma sugestão ou dica por favor não hesite em me contatar!**
