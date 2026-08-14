@@ -14,17 +14,17 @@ export const StockRemain = (props: StockRemainProps) => {
                 (insumo.quantidade / insumo.estoqueMinimo) * 100;
                 return { ...insumo, percentual };
         }) ?? [];
-
-    if (props.data === null && props.loading) return (
-        <div className="flex justify-center items-center h-32 mt-4 w-full">
-            <Spinner size="w-10 h-10" />
-        </div>
-    );
+        
     if (props.error) return <p>Erro: {props.error}</p>;
 
     return (
         <div className="mt-4 w-full">
             <h2 className='text-3xl font-semibold text-gray-700'>Itens com estoque baixo</h2>
+            {props.loading && (
+                    <div className="flex justify-center items-center h-32">
+                        <Spinner size="w-10 h-10"/>
+                    </div>
+            )}
             <ul className="border-gray-300 border-2 rounded-lg p-4 mt-2">
                 {insumosEstoqueBaixo.length == 0 && (
                     <p className="text-gray-500">Nenhum item com estoque baixo encontrado.</p>

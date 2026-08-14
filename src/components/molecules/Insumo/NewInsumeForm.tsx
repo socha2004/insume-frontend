@@ -10,7 +10,7 @@ export const NewInsumeForm = () => {
     const [formData, setFormData] = useState({
         nome: "",
         quantidade: 0,
-        unidadeMedida: "",
+        unidadeMedida: "Litro",
         estoqueMinimo: 0,
         dataValidade: "",
         marca: "",
