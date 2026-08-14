@@ -14,7 +14,7 @@ Atualmente, a aplicação possui as seguintes funcionalidades:
 
 <p align="center">
   <a href="https://skillicons.dev">
-    <img src="https://skillicons.dev/icons?i=react,typescript,vite,nodejs,vscode" />
+    <img src="https://skillicons.dev/icons?i=react,typescript,vite,nodejs,vscode,tailwind" />
   </a>
 </p>
 
