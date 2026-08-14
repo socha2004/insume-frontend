@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useUpdateInsumo } from "../../../hooks/Insumo/useUpdateInsumo";
+import { useCategoria } from "../../../hooks/Categoria/useCategoria";
 
 interface Insumo {
     id: number;
@@ -24,6 +25,7 @@ export const EditInsumeForm = (props: EditInsumeFormProps) => {
     const [formData, setFormData] = useState<Insumo | null>(props.data);
     const { loading, error, updateInsumo } = useUpdateInsumo();
     const [success, setSuccess] = useState("")
+    const { data } = useCategoria();
 
     const hoje = new Date().toISOString().split("T")[0];
 
@@ -103,18 +105,27 @@ export const EditInsumeForm = (props: EditInsumeFormProps) => {
 
                     <div className="flex flex-col">
                         <label className="font-bold">Unidade de Medida</label>
-                        <input
-                            type="text"
+                        <select
                             defaultValue={props.data?.unidadeMedida}
                             onChange={handleChange} name="unidadeMedida"
                             className="p-2 rounded border border-gray-400"
-                        />
+                        >
+                            <option value="Litro">Litro</option>
+                            <option value="Caixa">Caixa</option>
+                            <option value="Unidade">Unidade</option>
+                            <option value="Kilo">Kilo</option>
+                        </select>
                     </div>
 
                     <div className="flex flex-col">
                         <label className="font-bold">Categoria</label>
                         <select value={formData?.idCategoria} onChange={handleChange} name="idCategoria" className="p-2 rounded border border-gray-400">
-                            <option key={props.data?.idCategoria} value={props.data?.idCategoria}>{props.data?.categoria}</option>
+                            {/* <option key={props.data?.idCategoria} value={props.data?.idCategoria}>{props.data?.categoria}</option> */}
+                            {data?.map((categoria) => (
+                                <option key={categoria.id} value={categoria.id}>
+                                    {categoria.titulo}
+                                </option>
+                            ))}
                         </select>
                     </div>
 

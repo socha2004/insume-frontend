@@ -23,6 +23,7 @@ import { AuthPage } from './pages/Auth/AuthPage'
 import { Spinner } from './atoms/spinner/spinner'
 import { Footer } from './molecules/Footer/Footer'
 import {NextToExpiration} from './molecules/StockResume/components/NextToExpiration'
+import { PrivacyPage } from './pages/Privacy/Privacy'
 
 export { 
     Home,
@@ -49,5 +50,6 @@ export {
     DeleteInsumo,
     AuthPage,
     Footer,
-    NextToExpiration
+    NextToExpiration,
+    PrivacyPage
  }

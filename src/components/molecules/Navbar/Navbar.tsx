@@ -22,7 +22,7 @@ export const Navbar = () => {
         }
     }
     return (
-        <header className="fixed top-0 left-0 right-0 z-50 ">
+        <header className="fixed top-0 left-0 right-0 z-50 "  translate="no">
             <nav className="bg-cyan-800 text-white shadow-md">
                 <div className="flex justify-between items-center p-3">
 

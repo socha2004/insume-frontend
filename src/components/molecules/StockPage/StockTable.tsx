@@ -1,4 +1,6 @@
 import { useState, useMemo } from "react";
+import EditIcon from "../../../assets/stock/edit.svg"
+import DeleteIcon from "../../../assets/stock/delete.svg"
 
 interface Insumo {
   id: string | number;
@@ -101,12 +103,12 @@ export const StockTable = (props: StockTableProps) => {
       <table className="border-collapse border border-gray-400 w-full">
         <thead>
           <tr className="font-bold">
-            <td className="border border-gray-300 p-2">Id</td>
+            {/* <td className="border border-gray-300 p-2">Id</td> */}
             <td className="border border-gray-300 p-2">Nome</td>
             <td className="border border-gray-300 p-2">Quantidade</td>
-            <td className="border border-gray-300 p-2">Un. Medida</td>
-            <td className="border border-gray-300 p-2">Estoque Minimo</td>
-            <td className="border border-gray-300 p-2">Marca</td>
+            <td className="hidden lg:table-cell border border-gray-300 p-2">Un. Medida</td>
+            <td className="hidden lg:table-cell border border-gray-300 p-2">Estoque Minimo</td>
+            <td className="hidden lg:table-cell border border-gray-300 p-2">Marca</td>
             <td className="border border-gray-300 p-2">Categoria</td>
             <td className="border border-gray-300 p-2">Ações</td>
           </tr>
@@ -121,26 +123,26 @@ export const StockTable = (props: StockTableProps) => {
           ) : (
             itensDaPagina.map((insumo) => (
               <tr key={insumo.id}>
-                <td className="border border-gray-300 p-2">{insumo.id}</td>
+                {/* <td className="border border-gray-300 p-2">{insumo.id}</td> */}
                 <td className="border border-gray-300 p-2">{insumo.nome}</td>
                 <td className="border border-gray-300 p-2">{insumo.quantidade}</td>
-                <td className="border border-gray-300 p-2">{insumo.unidadeMedida}</td>
-                <td className="border border-gray-300 p-2">{insumo.estoqueMinimo}</td>
-                <td className="border border-gray-300 p-2">{insumo.marca}</td>
+                <td className="hidden lg:table-cell border border-gray-300 p-2">{insumo.unidadeMedida}</td>
+                <td className="hidden lg:table-cell border border-gray-300 p-2">{insumo.estoqueMinimo}</td>
+                <td className="hidden lg:table-cell border border-gray-300 p-2">{insumo.marca}</td>
                 <td className="border border-gray-300 p-2">{insumo.categoria}</td>
                 <td className="border border-gray-300 p-2">
-                  <div className="flex gap-2">
+                  <div className="flex gap-2 ">
                     <button
                       onClick={() => props.onView?.(insumo)}
-                      className="text-amber-50 hover:underline text-sm p-2 bg-green-500 rounded-sm"
+                      className=""
                     >
-                      Visualizar
+                      <img src={EditIcon} width={30} height={30}/>
                     </button>
                     <button
                       onClick={() => props.onDelete?.(insumo)}
-                     className="text-amber-50 hover:underline text-sm p-2 bg-red-500 rounded-sm"
+                     className=""
                     >
-                      Excluir
+                      <img src={DeleteIcon} width={30} height={30}/>
                     </button>
                   </div>
                 </td>
