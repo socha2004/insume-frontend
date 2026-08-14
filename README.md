@@ -48,6 +48,22 @@ src/
 
 ```
 
+## Fluxo da Aplicação
+```mermaid
+flowchart TD
+    U[Usuário]
+
+    F[React + Vite<br/>Frontend]
+
+    API[ASP.NET Web API<br/><br/>Autenticação<br/>Lógica de Negócio<br/>Entity Framework]
+
+    DB[(PostgreSQL<br/><br/>Usuários<br/>Insumos<br/>Categorias<br/>)]
+
+    U -->|HTTPS| F
+    F -->|HTTP / REST| API
+    API --> DB
+```
+
 ## Executando
 
 Para executar você precisa dos seguintes itens:
@@ -78,6 +94,10 @@ VITE_AUTH_ENDPOINT=ENDPOINT_DE_AUTENTICAÇÃO
 ```
 npm run dev
 ```
+
+## Privacidade e Segurança
+
+O projeto adota boas práticas de proteção de dados, incluindo armazenamento seguro de senhas por hash, comunicação via HTTPS e coleta apenas dos dados necessários para autenticação e utilização da aplicação.
 
 ## 🚀 Próximos passos
 
