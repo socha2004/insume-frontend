@@ -3,6 +3,7 @@ import { useAuth } from '../../../context/AuthContext'
 import { Link, NavLink } from "react-router-dom"
 import { useState } from 'react';
 import { useViewport } from '../../../hooks/useViewport'
+import { HamburgerMenu } from '../../../components';
 
 export const Navbar = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -53,7 +54,7 @@ export const Navbar = () => {
                             onClick={toggleMenu}
                             className="text-3xl"
                         >
-                            ☰
+                           <HamburgerMenu />
                         </button>
                     )}
                 </div>
