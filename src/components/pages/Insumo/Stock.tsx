@@ -18,7 +18,7 @@ export const Stock = () => {
                     Cadastrar Novo Insumo
                 </Link>
 
-                <Link to="/category" className="text-amber-50 hover:underline text-sm p-2 bg-blue-400 rounded-sm mb-2 shadow-sm transition-shadow duration-300 hover:shadow-xl">
+                <Link to="/category" className="hidden lg:inline text-amber-50 hover:underline text-sm p-2 bg-blue-400 rounded-sm mb-2 shadow-sm transition-shadow duration-300 hover:shadow-xl">
                     Visualizar Categorias
                 </Link>
 

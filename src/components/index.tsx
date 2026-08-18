@@ -24,6 +24,7 @@ import { Spinner } from './atoms/spinner/spinner'
 import { Footer } from './molecules/Footer/Footer'
 import {NextToExpiration} from './molecules/StockResume/components/NextToExpiration'
 import { PrivacyPage } from './pages/Privacy/Privacy'
+import { HamburgerMenu } from './atoms/icons/HamburguerMenu'
 
 export { 
     Home,
@@ -51,5 +52,6 @@ export {
     AuthPage,
     Footer,
     NextToExpiration,
-    PrivacyPage
+    PrivacyPage,
+    HamburgerMenu
  }
